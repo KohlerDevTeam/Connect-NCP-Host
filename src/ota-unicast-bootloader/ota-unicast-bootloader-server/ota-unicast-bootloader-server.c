@@ -681,10 +681,10 @@ static void sli_connect_ota_unicast_server_schedule_next_event(uint16_t time_ms)
   wait.it_value.tv_sec = 0;
   if (time_ms != 0) {
     wait.it_value.tv_nsec = time_ms * 1000000;
-    timerfd_settime(timer_fd, NULL, &wait, NULL);
+    timerfd_settime(timer_fd, 0, &wait, NULL);
   } else {
     wait.it_value.tv_nsec = 1;
-    timerfd_settime(timer_fd, NULL, &wait, NULL);
+    timerfd_settime(timer_fd, 0, &wait, NULL);
   }
   ota_event_is_active = true;
 }
