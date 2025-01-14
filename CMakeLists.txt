@@ -28,7 +28,7 @@ if(CC_HAVE_UNWIND_TABLES)
     add_compile_options(-funwind-tables)
 endif()
 
-link_directories(-L/root/stage/usr/local/lib)
+link_directories(/root/stage/usr/local/lib)
 
 if(CC_HAVE_RDYNAMIC)
     add_link_options(-rdynamic)
